@@ -144,11 +144,6 @@ public class GlobalExceptionHandler {
         error.put("error", "Internal Server Error");
         error.put("mensaje", "Ha ocurrido un error inesperado");
         
-        // Para debugging)
-        System.err.println("Error no manejado: " + ex.getClass().getName());
-        System.err.println("Mensaje: " + ex.getMessage());
-        ex.printStackTrace();
-        
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
 
     }
